@@ -1,10 +1,10 @@
 # simpleJS : A simple JavaScript library
 
+> simpleJS (or sJS) is a small and very useful library for JavaScript.
+
 Demo here : https://rawgit.com/ludovicm67/simple-js/master/demo/index.html
 
-simpleJS (or sJS) is a small and very usefull library for JavaScript.
-
-If you want to get out from the heavy jQuery world, this is one of **the best library** for you, because your jQuery code like :
+If you want to get out from the heavy jQuery world, this is one of **the best library** for you, because your jQuery code like:
 
 ```js
 $.ajax({
@@ -28,13 +28,13 @@ sJS.ajax({
 
 *So here in this case, only the '$' was transformed to 'sJS'*
 
-So you will be familiar with the requests. But simpleJS is not only for people from jQuery; this library will only contains the most useful tools for JavaScript developers with the help of the community. Everyone can read and improve this code, because it's easy to read and to add 
+So you will be familiar with the requests. But simpleJS is not only for people from jQuery; this library will only contain the most useful tools for JavaScript developers with the help of the community. Everyone can read and improve this code, because it's easy to read and to add new components.
 
 
 
 ## simpleRequest
 
-With sJS, you can perform classics requests like in jQuery, but also in this way :
+With sJS, you can perform classics requests like in jQuery, but also in this way:
 
 ```js
 sJS.get('/my/url', function (err, res) {
@@ -48,12 +48,12 @@ sJS.get('/my/url', function (err, res) {
 
 So you can choose the syntax you prefer :wink:
 
-The code is **very easy to understand and not long**, so if you want to learn more about all what you can do with requests of sJS, you can see the code in the **js/components/** folder.
+The code is **very easy to understand and not long**, so if you want to learn more about all what you can do with sJS requests, you can see the code in the **js/components/** folder.
 
 
 ## simpleElements
 
-You can also create new elements in a easy way :
+You can also create new elements in an easy way
 
 ```js
 document.appendChilds(
@@ -68,7 +68,7 @@ document.appendChilds(
 );
 ```
 
-instead of :
+instead of
 
 ```js
 var p = document.createElement('p');
@@ -97,11 +97,11 @@ It adds some informations about the project, so just type `sJS.printInfos()` and
 
 It can be useful, when you find a problem, and need to find the original repository to open an issue and/or to contribute in other ways.
 
-This component is very small, so if you want to add a new one, just copy this one, remove special content and add your stuff !
+This component is very small, so if you want to add a new one, just copy this one, remove special content and add your stuff!
 
 
-## Bugs ?
+## Bugs?
 
-This library is very young, so it may not be perfect for the moment.
+This library is very young, so it might not be perfect for the moment.
 
 You can fork and contribute to this repository by correcting some bugs or adding new components, or just open an issue here https://github.com/ludovicm67/simple-js/issues :wink:
