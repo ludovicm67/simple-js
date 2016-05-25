@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>Demo for simpleJS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+    .global {
+      max-width: 960px;
+      padding: 25px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      margin: 1em 0;
+    }
+    pre, code, #demo3-zone {
+      background-color: #eee;
+    }
+    #demo3-zone {
+      padding: 12px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 250px;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="global">
+    <h1>simpleJS demo page</h1>
+    <h2>simpleRequest</h2>
+    <p>simpleRequest is a simple JavaScript object that can help you to make requests in a simple way.<br>
+    Juste check following demos :</p>
+    <h3>Demo1 : simple GET request</h3>
+    <p>Perform a GET request to get external content for example.</p>
+    <p><strong>Syntax :</strong></p>
+    <pre><code>
+      sJS.get('url', function(err, res) {
+        // When no errors
+        if(!err) {
+          // .. do something
+        } else {
+          // .. do something else when an error occured
+        }
+      });
+    </code></pre>
+    <label for="demo1-url">URL</label>
+    <input type="text" id="demo1-url" value="demoFiles/text.txt" placeholder="URL for a simple GET request">
+    <button type="button" id="demo1-run">Run</button>
+    <textarea id="demo1-res" readonly>Just click on the 'Run' button ;)</textarea>
+    <h3>Demo2 : simple getJSON request</h3>
+    <p>Perform a GET request, and parse the JSON so you can access to all elements in a easy way with JavaScript.</p>
+    <p><strong>Syntax :</strong></p>
+    <pre><code>
+      sJS.getJSON('url', function(err, res) {
+        // When no errors
+        if(!err) {
+          // .. do something
+        } else {
+          // .. do something else when an error occured
+        }
+      });
+    </code></pre>
+    <label for="demo2-url">URL</label>
+    <input type="text" id="demo2-url" value="demoFiles/test.json" placeholder="URL for a simple getJSON request">
+    <button type="button" id="demo2-run">Run</button>
+    <p><em>See results in the console after clicking on the 'Run' button</em></p>
+    <h2>simpleElements</h2>
+    <h3>Demo3: add new elements quickly</h3>
+    <p><strong>Example :</strong></p>
+    <pre><code>
+      document.getElementById('demo3-run').addEventListener('click', function () {
+        document.getElementById('demo3-zone').appendChilds(
+          sJS.newElem('p', {
+            className: 'test',
+            textContent: 'This is a paragraph for a test :p'
+          }),
+          sJS.newElem('div', {
+            className: 'myClass',
+            innerHTML: 'Hello world ! :)'
+          })
+        );
+      });
+    </code></pre>
+    <button type="button" id="demo3-run">Run</button>
+    <div id="demo3-zone"><p>New elements will append here ! Click on the 'Run' button !</p></div>
+    <p>You can view the source code of this page if you want to see how you can use these functions</p>
+  </div>
+  <script src="../js/simpleJS.js"></script>
+  <script>
+    // DEMO1
+    document.getElementById('demo1-run').addEventListener('click', function () {
+      sJS.get(document.getElementById('demo1-url').value, function(err, res) {
+        var resZone = document.getElementById('demo1-res');
+        if(!err) resZone.textContent = res;
+        else resZone.textContent = "ERROR : " + err;
+      });
+    });
+
+    // DEMO2
+    document.getElementById('demo2-run').addEventListener('click', function () {
+      sJS.getJSON(document.getElementById('demo2-url').value, function(err, res) {
+        if(!err) console.log(res);
+        else console.error(err);
+      });
+    });
+
+    // DEMO3
+    document.getElementById('demo3-run').addEventListener('click', function () {
+      document.getElementById('demo3-zone').appendChilds(
+        sJS.newElem('p', {
+          className: 'test',
+          textContent: 'This is a paragraph for a test :p'
+        }),
+        sJS.newElem('div', {
+          className: 'myClass',
+          innerHTML: 'Hello world ! :)'
+        })
+      );
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "test": "Hello world !",
+  "test2": {
+    "a": "hello",
+    "b": "world"
+  }
+}

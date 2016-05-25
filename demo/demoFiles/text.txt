@@ -1,0 +1,2 @@
+Hello world ! :)
+I'm a smile text file you can use to perform some requests
