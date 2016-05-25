@@ -1,5 +1,7 @@
 # simpleJS : A simple JavaScript library
 
+Demo here : https://raw.githubusercontent.com/ludovicm67/simple-js/master/demo/index.html
+
 simpleJS (or sJS) is a small and very usefull library for JavaScript.
 
 If you want to get out from the heavy jQuery world, this is one of **the best library** for you, because your jQuery code like :
