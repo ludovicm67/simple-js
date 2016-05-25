@@ -1,6 +1,6 @@
 # simpleJS : A simple JavaScript library
 
-Demo here : https://raw.githubusercontent.com/ludovicm67/simple-js/master/demo/index.html
+Demo here : https://rawgit.com/ludovicm67/simple-js/master/demo/index.html
 
 simpleJS (or sJS) is a small and very usefull library for JavaScript.
 
