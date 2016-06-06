@@ -40,14 +40,18 @@
 
   var simpleElements = {
 
-      // create a new element quickly
-      newElem: function (elem, attrs) {
-          return Object.assign(document.createElement(elem), attrs);
-      },
-      // delete elements
-      removeElem: function () {
-        for (var i = 0; i < arguments.length; i++) arguments[i].parentNode.removeChild(arguments[i]);
-      }
+    // a simple selector
+    elem: function (str) {
+      return document.querySelectorAll(str);
+    },
+    // create a new element quickly
+    newElem: function (elem, attrs) {
+      return Object.assign(document.createElement(elem), attrs);
+    },
+    // remove elements
+    removeElem: function () {
+      for (var i = 0; i < arguments.length; i++) arguments[i].parentNode.removeChild(arguments[i]);
+    }
 
   };
 
