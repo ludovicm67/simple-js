@@ -90,6 +90,12 @@ So here you can see that :
 
  * you can create HTML elements very quickly with `sJS.newElem('tag', params)`
 
+You can also :
+
+ * remove quickly elements by using : `element.remove()`
+
+ * remove elements by using : `sJS.removeElem(elementsToDelete)`
+
 
 ## simpleInfos
 

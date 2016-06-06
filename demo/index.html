@@ -95,6 +95,22 @@
     </code></pre>
     <button type="button" id="demo3-run">Run</button>
     <div id="demo3-zone"><p>New elements will append here ! Click on the 'Run' button !</p></div>
+    <h3>Demo4: remove elements</h3>
+    <p><strong>Example :</strong></p>
+    <pre><code>
+      document.getElementById('demo4-run').addEventListener('click', function () {
+        var firstP = document.getElementById('demo4-zone').querySelector('p');
+        sJS.removeElem(firstP);
+      });
+    </code></pre>
+    <p><em>Note that you can also use the element.remove() method</em></p>
+    <button type="button" id="demo4-run">Run</button>
+    <div id="demo4-zone">
+      <p>Click on the 'Run' button ! To remove me !</p>
+      <p>I'll be removed after ;)</p>
+      <p>I'll be removed after the second^^</p>
+      <p>I'll be removed after the 3rd :P</p>
+    </div>
     <p>You can view the source code of this page if you want to see how you can use these functions</p>
   </div>
   <script src="../js/simpleJS.js"></script>
@@ -128,6 +144,12 @@
           innerHTML: 'Hello world ! :)'
         })
       );
+    });
+
+    // DEMO4
+    document.getElementById('demo4-run').addEventListener('click', function () {
+      var firstP = document.getElementById('demo4-zone').querySelector('p');
+      sJS.removeElem(firstP);
     });
   </script>
 </body>

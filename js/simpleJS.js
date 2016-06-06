@@ -41,11 +41,37 @@ if (typeof Object.assign != 'function') {
     }
   }
 
+  // We add the element.remove() method
+  if(typeof HTMLElement.prototype.remove !== "function") {
+    HTMLElement.prototype['remove'] = function () {
+      this.parentNode.removeChild(this);
+    }
+  }
+  if(typeof NodeList.prototype.remove !== "function") {
+    NodeList.prototype['remove'] = function () {
+      for (var i = 0; i < this.length; i++) {
+        if(this[i] && this[i].parentNode) this[i].parentNode.removeChild(this[i]);
+      }
+    }
+  }
+  if(typeof HTMLCollection.prototype.remove !== "function") {
+    HTMLCollection.prototype['remove'] = function () {
+      for (var i = 0; i < this.length; i++) {
+        if(this[i] && this[i].parentNode) this[i].parentNode.removeChild(this[i]);
+      }
+    }
+  }
+
+
   var simpleElements = {
 
       // create a new element quickly
       newElem: function (elem, attrs) {
           return Object.assign(document.createElement(elem), attrs);
+      },
+      // delete elements
+      removeElem: function () {
+        for (var i = 0; i < arguments.length; i++) arguments[i].parentNode.removeChild(arguments[i]);
       }
 
   };
