@@ -30,36 +30,36 @@ if (typeof Object.assign != 'function') {
 
   // We add the element.appendChilds() method
   if(typeof HTMLElement.prototype.appendChilds !== "function") {
-    HTMLElement.prototype['appendChilds'] = function () {
+    HTMLElement.prototype.appendChilds = function () {
       for (var i = 0; i < arguments.length; i++) this.appendChild(arguments[i]);
-    }
+    };
   }
   if(!document.body) document.body = document.getElementsByTagName('body')[0];
   if(typeof document.appendChilds !== "function" && document.body) {
     document.appendChilds = function () {
       for (var i = 0; i < arguments.length; i++) document.body.appendChild(arguments[i]);
-    }
+    };
   }
 
   // We add the element.remove() method
   if(typeof HTMLElement.prototype.remove !== "function") {
-    HTMLElement.prototype['remove'] = function () {
+    HTMLElement.prototype.remove = function () {
       this.parentNode.removeChild(this);
-    }
+    };
   }
   if(typeof NodeList.prototype.remove !== "function") {
-    NodeList.prototype['remove'] = function () {
+    NodeList.prototype.remove = function () {
       for (var i = 0; i < this.length; i++) {
         if(this[i] && this[i].parentNode) this[i].parentNode.removeChild(this[i]);
       }
-    }
+    };
   }
   if(typeof HTMLCollection.prototype.remove !== "function") {
-    HTMLCollection.prototype['remove'] = function () {
+    HTMLCollection.prototype.remove = function () {
       for (var i = 0; i < this.length; i++) {
         if(this[i] && this[i].parentNode) this[i].parentNode.removeChild(this[i]);
       }
-    }
+    };
   }
 
 
@@ -131,7 +131,7 @@ if (typeof Object.assign != 'function') {
       } else if(typeof init == 'string') {
         requestObject = {
           url: init
-        }
+        };
       }
 
       // Default values
@@ -144,11 +144,11 @@ if (typeof Object.assign != 'function') {
         if(typeof requestObject.success !== 'undefined') {
           callback = function(err, res) {
             if(!err) requestObject.success(res);
-          }
+          };
         } else {
           callback = function(err, res) {
             if(err) console.error(err);
-          }
+          };
         }
       }
 
@@ -187,7 +187,7 @@ if (typeof Object.assign != 'function') {
                 }
               }
               return str.join('&');
-            }
+            };
             request.send(serialize(requestObject.data));
           }
           else request.send(requestObject.data);

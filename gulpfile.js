@@ -29,7 +29,6 @@ gulp.task('min', ['compile', 'compile-supportless'], function () {
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./js'));
-
 });
 
 

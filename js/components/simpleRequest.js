@@ -15,7 +15,7 @@
       } else if(typeof init == 'string') {
         requestObject = {
           url: init
-        }
+        };
       }
 
       // Default values
@@ -28,11 +28,11 @@
         if(typeof requestObject.success !== 'undefined') {
           callback = function(err, res) {
             if(!err) requestObject.success(res);
-          }
+          };
         } else {
           callback = function(err, res) {
             if(err) console.error(err);
-          }
+          };
         }
       }
 
@@ -71,7 +71,7 @@
                 }
               }
               return str.join('&');
-            }
+            };
             request.send(serialize(requestObject.data));
           }
           else request.send(requestObject.data);
