@@ -1,5 +1,5 @@
 // Load all components needed
-var gulp = require('gulp'),
+const gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
   rename = require('gulp-rename');
@@ -24,7 +24,7 @@ gulp.task('compile-supportless', function () {
 });
 
 // Minify JavaScript
-gulp.task('min', ['compile', 'compile-supportless'], function () {
+gulp.task('min', gulp.parallel('compile', 'compile-supportless'), function () {
   return gulp.src(['./js/simpleJS.js', './js/simpleJS.supportless.js'])
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify({mangle: false}))
@@ -33,4 +33,4 @@ gulp.task('min', ['compile', 'compile-supportless'], function () {
 
 
 // Default task
-gulp.task('default', ['min']);
+gulp.task('default', gulp.parallel('min'));
