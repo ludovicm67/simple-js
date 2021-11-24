@@ -10,27 +10,44 @@ const gulp = require('gulp'),
 //
 
 // Concat all source files
-gulp.task('compile', function () {
-  return gulp.src(['./js/support/**/*.js', './js/components/**/*.js'])
+const compileTask = (cb) => {
+  gulp.src(['./js/support/**/*.js', './js/components/**/*.js'])
     .pipe(concat('simpleJS.js'))
     .pipe(gulp.dest('./js'));
-});
+
+  cb();
+};
 
 // Concat all source files without support (polyfill)
-gulp.task('compile-supportless', function () {
-  return gulp.src(['./js/components/**/*.js'])
+const compileSupportless = (cb) => {
+  gulp.src(['./js/components/**/*.js'])
     .pipe(concat('simpleJS.supportless.js'))
     .pipe(gulp.dest('./js'));
-});
+
+  cb();
+};
 
 // Minify JavaScript
-gulp.task('min', gulp.parallel('compile', 'compile-supportless'), function () {
-  return gulp.src(['./js/simpleJS.js', './js/simpleJS.supportless.js'])
+const minifyJavaScript = (cb) => {
+  gulp.src(['./js/simpleJS.js', './js/simpleJS.supportless.js'])
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./js'));
-});
 
+  cb();
+};
+
+// Copy to docs directory
+const docsTask = (cb) => {
+  gulp.src(['./js/simpleJS.min.js'])
+    .pipe(gulp.dest('./docs/js'));
+
+  cb();
+}
 
 // Default task
-gulp.task('default', gulp.parallel('min'));
+gulp.task('default', gulp.series(
+  gulp.parallel(compileTask, compileSupportless),
+  minifyJavaScript,
+  docsTask,
+));

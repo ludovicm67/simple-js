@@ -7,9 +7,9 @@
     "eslint": "^3.8.1",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.3"
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2"
   },
   "scripts": {
     "start": "gulp",
