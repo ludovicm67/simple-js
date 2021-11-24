@@ -4,7 +4,7 @@
   "description": "A simple JavaScript library",
   "main": "gulpfile.js",
   "devDependencies": {
-    "eslint": "^3.8.1",
+    "eslint": "^8.3.0",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
