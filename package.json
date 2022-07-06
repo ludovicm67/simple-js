@@ -1,5 +1,5 @@
 {
-  "name": "simple-js",
+  "name": "@ludovicm67/simple-js",
   "version": "1.0.0",
   "description": "A simple JavaScript library",
   "main": "gulpfile.js",
